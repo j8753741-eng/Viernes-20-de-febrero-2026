@@ -3,135 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Noche Especial</title>
+<title>Noche Inolvidable</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
 body{
     margin:0;
     padding:0;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg,#0f0014,#1a0026,#000);
-    color:#fff;
-    scroll-behavior:smooth;
+    font-family:'Montserrat', sans-serif;
+    background:#0a0014;
+    color:white;
+    overflow-x:hidden;
 }
 
-/* Fondo brillante elegante */
+/* Fondo animado elegante */
 body::before{
     content:"";
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: radial-gradient(circle at 20% 30%,rgba(255,0,150,0.15),transparent 40%),
-                radial-gradient(circle at 80% 70%,rgba(153,0,255,0.15),transparent 40%);
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle at 30% 40%,rgba(255,0,150,0.15),transparent 40%),
+               radial-gradient(circle at 70% 60%,rgba(128,0,255,0.15),transparent 40%);
+    animation:moveBg 15s infinite alternate ease-in-out;
     z-index:-1;
+}
+
+@keyframes moveBg{
+    from{transform:translate(0,0);}
+    to{transform:translate(-10%, -10%);}
 }
 
 .container{
     max-width:900px;
     margin:auto;
-    padding:20px;
+    padding:40px 20px;
 }
 
-/* Música */
-.music{
-    text-align:center;
-    margin-top:20px;
-    margin-bottom:30px;
+/* Carta principal */
+.carta{
+    background:linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02));
+    backdrop-filter:blur(20px);
+    border-radius:30px;
+    padding:60px 45px;
+    box-shadow:0 0 60px rgba(255,0,200,0.15);
+    border:1px solid rgba(255,255,255,0.1);
+    animation:fadeIn 2s ease;
 }
 
-.music iframe{
-    border-radius:20px;
-    box-shadow:0 0 30px rgba(255,0,150,0.4);
-}
-
-/* Secciones */
-.seccion{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(15px);
-    border-radius:25px;
-    padding:50px 40px;
-    margin-bottom:60px;
-    box-shadow:0 0 50px rgba(255,0,200,0.1);
-    border:1px solid rgba(255,255,255,0.08);
-    position:relative;
-}
-
-h1,h2{
-    font-family:'Cormorant Garamond', serif;
-    text-align:center;
-    letter-spacing:1px;
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
 h1{
-    font-size:2.6em;
-    margin-bottom:30px;
-    color:#ffd9ff;
-}
-
-h2{
-    font-size:2em;
-    color:#ffb3ff;
+    font-family:'Cinzel', serif;
+    text-align:center;
+    font-size:2.7em;
+    margin-bottom:40px;
+    letter-spacing:2px;
+    color:#ffd6ff;
 }
 
 p{
     font-size:1.1em;
     line-height:1.9;
     text-align:justify;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 /* Neon Rosado */
 .neon-rosado{
     text-align:center;
-    font-size:1.5em;
+    font-size:1.6em;
     margin-top:40px;
     color:#ff4da6;
-    text-shadow:0 0 10px #ff4da6,0 0 25px #ff1a8c,0 0 50px #ff1a8c;
+    text-shadow:0 0 10px #ff4da6,0 0 30px #ff1a8c,0 0 60px #ff1a8c;
 }
 
 /* Neon Morado */
 .neon-morado{
     text-align:center;
-    font-size:2.4em;
-    margin-top:35px;
-    color:#b266ff;
+    font-size:2.6em;
+    margin-top:40px;
     font-weight:bold;
-    text-shadow:0 0 10px #b266ff,0 0 30px #9933ff,0 0 60px #8000ff;
+    color:#b266ff;
+    text-shadow:0 0 15px #b266ff,0 0 40px #9933ff,0 0 80px #8000ff;
+    animation:latido 1.8s infinite;
+}
+
+@keyframes latido{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.05);}
 }
 
 /* Neon Dorado */
 .neon-dorado{
     text-align:center;
-    font-size:1.4em;
+    font-size:1.5em;
     margin-top:35px;
     color:#ffd700;
-    text-shadow:0 0 10px #ffd700,0 0 30px #ffcc00,0 0 60px #ffaa00;
+    text-shadow:0 0 15px #ffd700,0 0 40px #ffcc00,0 0 80px #ffaa00;
 }
 
-/* Botón elegante */
+/* Botones */
 .boton{
     display:block;
-    width:220px;
+    width:240px;
     margin:50px auto 0;
     padding:14px;
     text-align:center;
-    border-radius:40px;
+    border-radius:50px;
     text-decoration:none;
     font-weight:bold;
     color:white;
     background:linear-gradient(45deg,#ff4da6,#9933ff);
-    box-shadow:0 0 25px rgba(255,0,200,0.6);
+    box-shadow:0 0 30px rgba(255,0,200,0.6);
     transition:0.4s;
+    cursor:pointer;
 }
 
 .boton:hover{
     transform:scale(1.08);
-    box-shadow:0 0 40px rgba(255,0,200,0.9);
+    box-shadow:0 0 50px rgba(255,0,200,0.9);
+}
+
+/* Reflexión oculta */
+.reflexion{
+    margin-top:60px;
+    opacity:0;
+    max-height:0;
+    overflow:hidden;
+    transition:all 1.2s ease;
+}
+
+.reflexion.activa{
+    opacity:1;
+    max-height:1000px;
+}
+
+h2{
+    text-align:center;
+    font-family:'Cinzel', serif;
+    font-size:2em;
+    margin-bottom:25px;
+    color:#ffb3ff;
 }
 
 </style>
@@ -140,19 +157,11 @@ p{
 
 <div class="container">
 
-<!-- Música arriba -->
-<div class="music">
-<iframe width="100%" height="80"
-src="https://www.youtube.com/embed/Vm-SE_9_hi0?autoplay=1&loop=1&playlist=Vm-SE_9_hi0"
-title="Nuestra Canción"
-frameborder="0"
-allow="autoplay"
-allowfullscreen>
-</iframe>
-</div>
+<a href="https://youtu.be/Vm-SE_9_hi0" target="_blank" class="boton">
+Escucha la canción 🎵
+    </a>
 
-<!-- CARTA -->
-<div class="seccion">
+<div class="carta">
 
 <h1>Viernes 20 de Febrero de 2026 — Por la Noche</h1>
 
@@ -174,20 +183,27 @@ allowfullscreen>
 Prometo caminar a tu lado en cada etapa de nuestra historia, como dos almas entrelazadas en un viaje mágico que solo nosotros podemos entender. Seré tu compañero en cada aventura, desde las risas que compartimos bajo el cielo estrellado hasta los momentos de calma en los que simplemente nos miramos a los ojos y entendemos todo sin palabras. Te amaré sin medidas, con la devoción de un poeta que encuentra la inspiración en cada latido de tu corazón. En los días difíciles, cuando las sombras parezcan alargarse, te elegiré con la certeza de que nuestra unión es más fuerte que cualquier tormenta. Te prometo ser tu refugio, el abrazo cálido que te espera al final del día, y la luz que ilumina incluso los caminos más oscuros. Juntos, crearemos un mundo donde cada día sea una nueva oportunidad para amarnos más, donde cada desafío sea una lección que fortalezca nuestro lazo. Eres mi sueño hecho realidad, y te prometo que siempre seré el guardián de tu felicidad y el arquitecto de nuestro amor eterno. 
 </div>
 
-<a href="#reflexion" class="boton">Continuar a la reflexión ✨</a>
-
+<div class="boton" onclick="mostrarReflexion()">
+Descubrir reflexión ✨
 </div>
 
-<!-- REFLEXIÓN -->
-<div class="seccion" id="reflexion">
-
+<div class="reflexion" id="reflexion">
 <h2>Reflexión</h2>
 
+<p>
 <p>Ahora, quiero que reflexiones sobre lo que hemos vivido juntos. Cada risa compartida, cada lágrima derramada, cada mirada cómplice que hemos intercambiado. Recuerdo el primer día que nos conocimos, ese instante mágico que parece haber sido diseñado por el destino. La forma en que nuestras miradas se cruzaron, como si el universo hubiera hecho una pausa para permitir que nuestras almas se reconocieran. Desde ese momento, supe que había algo especial entre nosotros, algo que iba más allá de lo físico, algo que tocaba las fibras más profundas de mi ser.A medida que nuestra relación ha crecido, he tenido la suerte de descubrir cada una de tus facetas. Me encanta cómo te ríes de mis chistes malos, cómo me miras con esos ojos que parecen contener todo el universo. Me fascina ver cómo enfrentas los desafíos de la vida con una valentía que me inspira a ser mejor. Cada día a tu lado es una lección de amor, de paciencia y de comprensión. Has sido mi compañera, mi confidente, y mi mejor amiga. A veces me detengo a pensar en las pequeñas cosas que hacen que nuestro amor sea único. Como cuando me despierto y te encuentro a mi lado, con tu cabello desordenado y una sonrisa que ilumina mi mañana. O esos momentos en los que simplemente nos sentamos en silencio, disfrutando de la compañía del otro, sintiendo que no necesitamos palabras para comunicarnos. Esos instantes son los que atesoro en mi corazón, porque son la esencia de lo que somos.Y qué decir de las aventuras que hemos compartido. Desde los viajes espontáneos a lugares desconocidos hasta las noches tranquilas en casa, cada experiencia ha sido un ladrillo en la construcción de nuestra historia. Me encanta cómo nos perdemos en la música, bailando en la sala como si nadie estuviera mirando, riendo hasta que nos duele el estómago. Esos momentos son los que me hacen sentir vivo, y son los que me recuerdan que el amor verdadero se encuentra en las cosas simples de la vida.Quiero que sepas que estoy aquí para ti en cada paso del camino. En los días soleados y en los tormentosos, en los momentos de alegría y en los de tristeza. Quiero ser tu refugio, la persona a la que siempre puedas acudir cuando necesites apoyo. Prometo ser tu compañero de vida, tu cómplice en todas las travesuras y tu ancla en tiempos de tempestad. Quiero construir un futuro contigo, un futuro lleno de sueños compartidos, de risas, de amor y de aventuras.Imagina por un momento cómo será nuestra vida en el futuro. Visualiza los amaneceres que compartiremos, las historias que contaremos a nuestros hijos, los momentos de complicidad que nos harán reír hasta que nos duela el estómago. Quiero que cada día sea una nueva oportunidad para amarnos, para descubrir nuevas facetas de nosotros mismos y del mundo que nos rodea. Quiero construir un hogar donde el amor sea la base, donde cada rincón esté lleno de risas y recuerdos felices.Si alguna vez sientes que el mundo se vuelve abrumador, recuerda que siempre estaré aquí, listo para abrazarte y recordarte lo increíble que eres. No importa cuán difíciles se pongan las cosas, siempre habrá un lugar seguro en mis brazos, un refugio donde puedas encontrar paz y consuelo. Quiero que sepas que cada desafío que enfrentamos juntos solo fortalecerá nuestro amor, y cada obstáculo será una oportunidad para crecer y aprender.Esta noche, mientras miro las estrellas, pienso en todos los sueños que aún nos quedan por cumplir. Sueños que quiero compartir contigo, que quiero construir a tu lado. Desde los momentos más simples hasta los más extraordinarios, quiero que cada día esté lleno de significado y amor. Quiero que nuestra historia sea una de esas que se cuentan a lo largo de los años, una historia que inspire a otros a amar con la misma intensidad con la que nosotros lo hacemos.Así que, mi amor, mientras cierro esta carta, quiero que sepas que mi amor por ti es infinito. Es un amor que no conoce límites, que se expande y crece con cada día que pasa. Eres mi todo, y no puedo esperar a seguir escribiendo nuestra historia, página por página, en este hermoso libro que es la vida.</p>
 
 </div>
 
 </div>
+
+</div>
+
+<script>
+function mostrarReflexion(){
+    document.getElementById("reflexion").classList.add("activa");
+}
+</script>
 
 </body>
 </html>
